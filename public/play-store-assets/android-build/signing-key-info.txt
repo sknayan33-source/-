@@ -1,0 +1,10 @@
+Keep this file and signing.keystore in a safe place. You'll need these files if you want to upload future versions of your PWA to the Google Play Store.
+
+Key store file: signing.keystore
+Key store password: SIJM5pb_UtbJ
+Key alias: my-key-alias
+Key password: SIJM5pb_UtbJ
+Signer's full name: Sonamonir Pathshala
+Signer's organization: Sonamonir Pathshala
+Signer's organizational unit: Education
+Signer's country code: BD

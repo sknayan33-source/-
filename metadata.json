@@ -1,0 +1,6 @@
+{
+  "name": "বাংলা বর্ণমালা - শিশু শিক্ষা (Bangla Alphabet Audio Learning)",
+  "description": "বাংলা স্বরবর্ণ ও ব্যঞ্জনবর্ণ (প থেকে চন্দ্রবিন্দু ঁ সহ সম্পূর্ণ বর্ণমালা) অডিও উচ্চারণ, শব্দ গঠন, ছড়া ও ছবি সহ শিশুদের আকর্ষণীয় শিক্ষা অ্যাপ।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

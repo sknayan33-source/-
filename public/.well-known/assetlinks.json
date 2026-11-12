@@ -1,0 +1,23 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.sonamonirpathshala.app",
+      "sha256_cert_fingerprints": [
+        "66:EC:FB:A9:E2:78:1D:79:B6:28:99:10:54:E9:A4:84:5E:71:73:5F:D7:11:C4:B5:73:7D:98:0D:78:6D:06:D5"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.run.asia_southeast1.ais_pre_yvmuw5tiqosykxup7pcy33_499412979403.twa",
+      "sha256_cert_fingerprints": [
+        "F8:E3:A2:A0:72:36:32:58:4B:42:C6:DF:F7:81:44:8C:0B:52:8D:CC:D5:7B:8F:E1:A5:78:46:FB:F5:82:3E:F6",
+        "DD:93:EE:BA:EF:CF:5D:82:C5:C2:C9:22:29:EC:C0:00:69:98:8E:43:1A:B0:CE:E1:80:5D:6C:81:25:50:2C:00"
+      ]
+    }
+  }
+]

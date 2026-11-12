@@ -1,0 +1,27 @@
+{
+  "packageId": "com.sonamonirpathshala.app",
+  "name": "সোনামণির পাঠশালা (Sonamonir Pathshala)",
+  "launcherName": "সোনামণির পাঠশালা",
+  "display": "standalone",
+  "themeColor": "#F59E0B",
+  "navigationColor": "#FFFBEB",
+  "navigationColorDark": "#0F172A",
+  "navigationDividerColor": "#FDE68A",
+  "navigationDividerColorDark": "#1E293B",
+  "backgroundColor": "#FFFBEB",
+  "enableNotifications": false,
+  "startUrl": "/",
+  "iconUrl": "/hashikhushi-icon-512.png",
+  "maskableIconUrl": "/hashikhushi-maskable-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "enableSiteSettingsShortcut": false,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "features": {},
+  "alphaDependencies": {
+    "enabled": false
+  },
+  "fallbackType": "customtabs",
+  "minSdkVersion": 21,
+  "orientation": "any"
+}

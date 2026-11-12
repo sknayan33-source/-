@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="bn" style="background-color: #fffbeb; color-scheme: light;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>সোনামণির পাঠশালা (Sonamonir Pathshala) - শিশু শিক্ষা, বর্ণমালা ও ছড়া</title>
+    <meta name="description" content="সোনামণির পাঠশালা (Sonamonir Pathshala) — ছোটদের বাংলা বর্ণমালা, ছড়া, কবিতা, শর্ট ভিডিও ও কার্টুন শেখার আনন্দময় শিশু শিক্ষা অ্যাপ।" />
+    
+    <!-- PWA Primary & Mobile Web App Meta Tags -->
+    <link rel="manifest" href="/manifest.webmanifest?v=sonamonir_v7&__aistudio_auth_token=one_token_to_rule_them_all" crossorigin="use-credentials" />
+    <meta name="theme-color" content="#f59e0b" />
+    <meta name="color-scheme" content="light" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="সোনামণির পাঠশালা" />
+    <meta name="application-name" content="সোনামণির পাঠশালা" />
+    <link rel="apple-touch-icon" href="/sonamonir-icon-192.png?v=3" />
+    <link rel="icon" type="image/png" href="/favicon.png?v=3" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg?v=3" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/sonamonir-icon-192.png?v=3" />
+    <!-- Google AdMob / Google Mobile Ads Official Web Integration -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4591170818423623" crossorigin="anonymous"></script>
+
+    <style>
+      html, body {
+        background-color: #fffbeb !important;
+        background: #fffbeb !important;
+        color-scheme: light !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        touch-action: pan-y !important;
+        overscroll-behavior-x: none !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      #root {
+        background-color: #fffbeb !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100vw !important;
+        touch-action: pan-y !important;
+      }
+    </style>
+
+    <script>
+      (function () {
+        // 0. Force Immediate Cache & Service Worker Purge on Version 25 Update
+        var FORCE_PURGE_KEY = 'sonamonir_cache_purge_v25_publish';
+        try {
+          if (localStorage.getItem(FORCE_PURGE_KEY) !== 'purged') {
+            localStorage.setItem(FORCE_PURGE_KEY, 'purged');
+            if ('caches' in window) {
+              caches.keys().then(function (names) {
+                names.forEach(function (name) {
+                  caches.delete(name);
+                });
+              });
+            }
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function (regs) {
+                regs.forEach(function (reg) {
+                  reg.unregister();
+                });
+              });
+            }
+          }
+        } catch (e) {}
+
+        // 1. Detect standalone app / Edge-to-Edge Android mode immediately
+        try {
+          if (
+            window.matchMedia('(display-mode: standalone)').matches ||
+            window.matchMedia('(display-mode: fullscreen)').matches ||
+            window.navigator.standalone === true ||
+            /android.*wv|android.*version\/[0-9]/i.test(navigator.userAgent)
+          ) {
+            document.documentElement.classList.add('is-standalone-app');
+          }
+        } catch (e) {}
+
+        // 2. Capture native PWA install prompt at millisecond 0 before React bundle finishes loading
+        window.__deferredPwaPrompt = null;
+        window.addEventListener('beforeinstallprompt', function (e) {
+          e.preventDefault();
+          window.__deferredPwaPrompt = e;
+          window.dispatchEvent(new CustomEvent('pwa-prompt-ready'));
+        });
+
+        // 3. Register Service Worker v25 with automatic cache invalidation & stale cache purge
+        try {
+          if (window.self === window.top && 'serviceWorker' in navigator) {
+            navigator.serviceWorker
+              .register('/sw.js?v=sonamonir_v25', { scope: '/', updateViaCache: 'none' })
+              .then(function (reg) {
+                reg.update().catch(function () {});
+                reg.addEventListener('updatefound', function () {
+                  var newWorker = reg.installing;
+                  if (newWorker) {
+                    newWorker.addEventListener('statechange', function () {
+                      if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                        newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      }
+                    });
+                  }
+                });
+              })
+              .catch(function () {});
+
+            var isRefreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', function () {
+              if (!isRefreshing) {
+                isRefreshing = true;
+                window.location.reload();
+              }
+            });
+          }
+        } catch (err) {}
+
+        // 4. Strict Horizontal Scroll Prevention for Mobile Web & Native App WebView
+        var startTouchX = 0;
+        var startTouchY = 0;
+        window.addEventListener('touchstart', function(e) {
+          if (e.touches && e.touches.length > 0) {
+            startTouchX = e.touches[0].clientX;
+            startTouchY = e.touches[0].clientY;
+          }
+        }, { passive: true });
+
+        window.addEventListener('touchmove', function(e) {
+          if (!e.touches || e.touches.length === 0) return;
+          var touchX = e.touches[0].clientX;
+          var touchY = e.touches[0].clientY;
+          var deltaX = Math.abs(touchX - startTouchX);
+          var deltaY = Math.abs(touchY - startTouchY);
+
+          // If child element has horizontal scrollable area (like category badges or video cards), allow internal scroll
+          var target = e.target;
+          var hasHorizScrollParent = false;
+          while (target && target !== document.body && target !== document.documentElement) {
+            if (target.scrollWidth > target.clientWidth && (getComputedStyle(target).overflowX === 'auto' || getComputedStyle(target).overflowX === 'scroll')) {
+              hasHorizScrollParent = true;
+              break;
+            }
+            target = target.parentElement;
+          }
+
+          // If predominantly horizontal movement on the main page, cancel it to prevent web wobble/swiping
+          if (!hasHorizScrollParent && deltaX > deltaY && deltaX > 8) {
+            if (e.cancelable) {
+              e.preventDefault();
+            }
+          }
+        }, { passive: false });
+      })();
+    </script>
+
+    <!-- OpenGraph / Social Meta Tags -->
+    <meta property="og:title" content="সোনামণির পাঠশালা (Sonamonir Pathshala) - শিশু শিক্ষা, বর্ণমালা ও ছড়া" />
+    <meta property="og:description" content="সোনামণির পাঠশালা (Sonamonir Pathshala) — ছোটদের বাংলা বর্ণমালা, ছড়া, কবিতা, শর্ট ভিডিও ও কার্টুন শেখার আনন্দময় শিশু শিক্ষা অ্যাপ।" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atma:wght@500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body style="background-color: #fffbeb; color-scheme: light; margin: 0; padding: 0; min-height: 100vh;" class="bg-amber-50/40 text-slate-800 antialiased selection:bg-amber-200">
+    <div id="root">
+      <!-- Instant Branded Splash Screen: Completely eliminates white/black blank screen on mobile launch -->
+      <div id="instant-splash" style="position: fixed; inset: 0; background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 99999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px;">
+        <div style="position: relative; width: 108px; height: 108px; margin-bottom: 20px; border-radius: 28px; background: #ffffff; box-shadow: 0 16px 36px rgba(245, 158, 11, 0.3); display: flex; align-items: center; justify-content: center; border: 3px solid #f59e0b; overflow: hidden; animation: splashBounce 1.6s infinite ease-in-out;">
+          <img src="/sonamonir-icon-192.png?v=3" alt="সোনামণির পাঠশালা" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'" />
+        </div>
+        <h1 style="margin: 0; font-size: 28px; font-weight: 900; color: #78350f; text-shadow: 0 1px 2px rgba(255,255,255,0.8); letter-spacing: -0.5px;">সোনামণির পাঠশালা</h1>
+        <p style="margin: 8px 0 22px 0; font-size: 14px; font-weight: 700; color: #b45309;">শিশু শিক্ষা ও আনন্দের জগৎ ✨</p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <div style="width: 9px; height: 9px; border-radius: 50%; background: #f59e0b; animation: splashDot 1s infinite alternate;"></div>
+          <div style="width: 9px; height: 9px; border-radius: 50%; background: #ea580c; animation: splashDot 1s infinite alternate 0.2s;"></div>
+          <div style="width: 9px; height: 9px; border-radius: 50%; background: #10b981; animation: splashDot 1s infinite alternate 0.4s;"></div>
+        </div>
+        <span style="margin-top: 12px; font-size: 12px; font-weight: 700; color: #92400e; letter-spacing: 0.5px;">লোড হচ্ছে...</span>
+        <style>
+          @keyframes splashBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+          }
+          @keyframes splashDot {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.3); opacity: 1; }
+          }
+        </style>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

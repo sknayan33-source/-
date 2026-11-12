@@ -1,0 +1,154 @@
+{
+  "entities": {
+    "AnalyticsEvent": {
+      "title": "Analytics Event",
+      "description": "Represents a tracked user interaction event in the app",
+      "type": "object",
+      "properties": {
+        "eventType": {
+          "type": "string",
+          "description": "Type of user interaction",
+          "enum": [
+            "page_view",
+            "app_install",
+            "letter_play",
+            "word_play",
+            "rhyme_play",
+            "quiz_complete",
+            "share_click",
+            "tracing_complete"
+          ]
+        },
+        "details": {
+          "type": "string",
+          "description": "Short detail or letter name",
+          "maxLength": 100
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "Unique session identifier",
+          "maxLength": 64
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp of the event",
+          "maxLength": 40
+        }
+      },
+      "required": ["eventType", "createdAt"]
+    },
+    "AppStats": {
+      "title": "App Stats Overview",
+      "description": "Aggregated usage counters for the app",
+      "type": "object",
+      "properties": {
+        "totalVisits": {
+          "type": "number",
+          "description": "Total visits count"
+        },
+        "totalInstalls": {
+          "type": "number",
+          "description": "Total PWA / APK installations count"
+        },
+        "totalPlays": {
+          "type": "number",
+          "description": "Total letter or audio plays count"
+        },
+        "totalQuizzes": {
+          "type": "number",
+          "description": "Total quizzes completed"
+        },
+        "totalTracing": {
+          "type": "number",
+          "description": "Total tracing practices completed"
+        },
+        "totalShares": {
+          "type": "number",
+          "description": "Total share clicks"
+        },
+        "lastUpdated": {
+          "type": "string",
+          "description": "ISO timestamp of last update",
+          "maxLength": 40
+        }
+      }
+    },
+    "ActiveSession": {
+      "title": "Active Player Session",
+      "description": "Tracks real-time online users and what they are currently playing in the app",
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string",
+          "description": "Unique session identifier",
+          "maxLength": 64
+        },
+        "currentTab": {
+          "type": "string",
+          "description": "Current section of the app",
+          "maxLength": 40
+        },
+        "currentActivity": {
+          "type": "string",
+          "description": "Description of current letter or game activity",
+          "maxLength": 100
+        },
+        "isInstalledApp": {
+          "type": "boolean",
+          "description": "Whether the user is playing from the installed app"
+        },
+        "deviceType": {
+          "type": "string",
+          "description": "Device platform name",
+          "maxLength": 40
+        },
+        "lastSeenMs": {
+          "type": "number",
+          "description": "Epoch milliseconds of last heartbeat"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last heartbeat",
+          "maxLength": 40
+        }
+      },
+      "required": ["sessionId", "lastSeenMs", "updatedAt"]
+    },
+    "AppSetting": {
+      "title": "App Visual Setting",
+      "description": "Stores custom images such as the banner watermark across all devices",
+      "type": "object",
+      "properties": {
+        "imageData": {
+          "type": "string",
+          "description": "Data URL or image path for watermark",
+          "maxLength": 900000
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp",
+          "maxLength": 40
+        }
+      },
+      "required": ["imageData", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/analytics_events/{eventId}": {
+      "schema": "AnalyticsEvent",
+      "description": "Log of user interaction events"
+    },
+    "/app_stats/{statId}": {
+      "schema": "AppStats",
+      "description": "Aggregated application performance metrics"
+    },
+    "/active_sessions/{sessionId}": {
+      "schema": "ActiveSession",
+      "description": "Real-time presence of active players in the app"
+    },
+    "/app_settings/{settingId}": {
+      "schema": "AppSetting",
+      "description": "Global visual settings like custom banner watermark"
+    }
+  }
+}

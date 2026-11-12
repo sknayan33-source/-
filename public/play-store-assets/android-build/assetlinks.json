@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.sonamonirpathshala.app",
+        "sha256_cert_fingerprints": ["66:EC:FB:A9:E2:78:1D:79:B6:28:99:10:54:E9:A4:84:5E:71:73:5F:D7:11:C4:B5:73:7D:98:0D:78:6D:06:D5"]
+      }
+    }]

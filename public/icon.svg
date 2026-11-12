@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="tvBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FEFCE8" />
+      <stop offset="100%" stop-color="#FEF08A" />
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#4C1D95" flood-opacity="0.38" />
+    </filter>
+  </defs>
+
+  <!-- Squircle Background -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)" />
+
+  <!-- Decorative Glow Circle -->
+  <circle cx="256" cy="264" r="200" fill="#FFFFFF" opacity="0.16" />
+
+  <!-- TV Antennas -->
+  <g stroke="#FEF08A" stroke-width="14" stroke-linecap="round">
+    <line x1="210" y1="138" x2="155" y2="76" />
+    <line x1="302" y1="138" x2="357" y2="76" />
+  </g>
+  <circle cx="150" cy="72" r="18" fill="#10B981" stroke="#FFFFFF" stroke-width="6" />
+  <circle cx="362" cy="72" r="18" fill="#F43F5E" stroke="#FFFFFF" stroke-width="6" />
+
+  <!-- TV Outer Frame -->
+  <rect x="86" y="130" width="340" height="268" rx="64" fill="url(#tvBody)" stroke="#FFFFFF" stroke-width="12" filter="url(#shadow)" />
+
+  <!-- TV Feet -->
+  <path d="M 150 398 L 130 436" stroke="#FEF08A" stroke-width="18" stroke-linecap="round" />
+  <path d="M 362 398 L 382 436" stroke="#FEF08A" stroke-width="18" stroke-linecap="round" />
+
+  <!-- TV Screen -->
+  <rect x="116" y="158" width="246" height="212" rx="40" fill="url(#screenGrad)" stroke="#F59E0B" stroke-width="6" />
+
+  <!-- Side Control Panel Buttons -->
+  <circle cx="392" cy="215" r="15" fill="#F43F5E" stroke="#FFFFFF" stroke-width="4" />
+  <circle cx="392" cy="262" r="15" fill="#10B981" stroke="#FFFFFF" stroke-width="4" />
+  <line x1="378" y1="312" x2="406" y2="312" stroke="#FEF08A" stroke-width="7" stroke-linecap="round" />
+  <line x1="378" y1="332" x2="406" y2="332" stroke="#FEF08A" stroke-width="7" stroke-linecap="round" />
+
+  <!-- Happy Laughing Eyes on TV Screen -->
+  <path d="M 172 232 Q 192 204 212 232" fill="none" stroke="#1E293B" stroke-width="12" stroke-linecap="round" />
+  <path d="M 266 232 Q 286 204 306 232" fill="none" stroke="#1E293B" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Rosy Cheeks -->
+  <ellipse cx="164" cy="258" rx="18" ry="11" fill="#FB7185" opacity="0.75" />
+  <ellipse cx="314" cy="258" rx="18" ry="11" fill="#FB7185" opacity="0.75" />
+
+  <!-- Big Joyful Smile (Hashikhushi) -->
+  <path d="M 184 268 Q 239 338 294 268 Z" fill="#E11D48" stroke="#1E293B" stroke-width="10" stroke-linejoin="round" />
+  <path d="M 212 295 Q 239 322 266 295 Z" fill="#FDA4AF" />
+
+  <!-- Sparkle Stars -->
+  <path d="M 68 150 Q 68 168 86 168 Q 68 168 68 186 Q 68 168 50 168 Q 68 168 68 150" fill="#FEF08A" />
+  <path d="M 448 165 Q 448 180 463 180 Q 448 180 448 195 Q 448 180 433 180 Q 448 180 448 165" fill="#FEF08A" />
+</svg>

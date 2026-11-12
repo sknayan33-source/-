@@ -1,0 +1,53 @@
+{
+  "id": "/sonamonir-pathshala",
+  "name": "সোনামণির পাঠশালা (Sonamonir Pathshala)",
+  "short_name": "সোনামণির পাঠশালা",
+  "description": "সোনামণির পাঠশালা (Sonamonir Pathshala) — ছোটদের বাংলা বর্ণমালা, ছড়া, কবিতা, শর্ট ভিডিও ও কার্টুন শেখার আনন্দময় শিশু শিক্ষা অ্যাপ।",
+  "start_url": "/?__aistudio_auth_token=one_token_to_rule_them_all",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#fffbeb",
+  "theme_color": "#f59e0b",
+  "lang": "bn",
+  "dir": "ltr",
+  "categories": ["education", "entertainment"],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "/hashikhushi-icon-192.png?__aistudio_auth_token=one_token_to_rule_them_all",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/hashikhushi-icon-512.png?__aistudio_auth_token=one_token_to_rule_them_all",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/hashikhushi-maskable-512.png?__aistudio_auth_token=one_token_to_rule_them_all",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/play-screenshot-mobile.png?__aistudio_auth_token=one_token_to_rule_them_all",
+      "sizes": "540x960",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "সোনামণির পাঠশালা — শিশু শিক্ষা ও মজার ভিডিও"
+    },
+    {
+      "src": "/play-screenshot-wide.png?__aistudio_auth_token=one_token_to_rule_them_all",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "সোনামণির পাঠশালা — বাংলা বর্ণমালা ও ছড়া"
+    }
+  ]
+}
